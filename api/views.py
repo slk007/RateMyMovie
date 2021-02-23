@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
+from django.contrib.auth.models import User
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -126,3 +127,5 @@ class RatingCreateAPIView(generics.CreateAPIView):
         else:
             # saving the rating given by current user
             serializer.save(given_by=self.request.user, for_movie=movie)
+
+

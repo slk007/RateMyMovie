@@ -7,7 +7,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">1. Django Web API</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">All you API's are here</p>
                 <a target="blank" class="btn btn-primary" href="{% url 'movies' %}">View API</a>
             </div>
         </div>
@@ -16,7 +16,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">2. Admin Panel</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text">Basic Admin Panel Provide by Django.</p>
                 <a target="blank" class="btn btn-success" href="/admin">View Django Admin Panel</a>
             </div>
         </div>
@@ -26,18 +26,19 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">3. Git repo</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-danger">View Repository</a>
+                <h5 class="card-title">3. Login Signup</h5>
+                <p class="card-text">Used Function Based Views from Django for Login/SignUp</p>
+                <a href="{% url 'loginuser' %}" class="btn btn-warning">Log In</a>
+                <a href="{% url 'signupuser' %}" class="btn btn-info">Sign Up</a>
             </div>
         </div>
     </div>
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">4. API Endpoints</h5>
-                <p class="card-text">All the API Endpoints are listed in API.md File</p>
-                <a href="#" class="btn btn-danger">View API.md</a>
+                <h5 class="card-title">4. Github Repository</h5>
+                <p class="card-text">GitHub Repository that has all the code </p>
+                <a href="https://github.com/slk007/RateMyMovie" class="btn btn-danger">View Code</a>
             </div>
         </div>
     </div>
@@ -46,10 +47,30 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">5. Task</h5>
+                <h5 class="card-title">5. Rest API<h5>
+                <p class="card-text">Django REST FRAMEWORK used to make API's</p>
+                <a href="{% url 'movies' %}" class="btn btn-dark">View DRF</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">6. API Endpoints</h5>
+                <p class="card-text">All the API Endpoints are listed in API.md File</p>
+                <a href="https://github.com/slk007/RateMyMovie/blob/master/API.md" class="btn btn-primary">View API.md</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">7. Task</h5>
                 <p class="card-text">Task, that sends the average rating of each movie to all of the admins, at
                     midnight daily</p>
-                <a target="blank" class="btn btn-secondary"
+                <a target="blank" class="btn btn-danger"
                     href="#">Notifications</a>
             </div>
         </div>
@@ -57,9 +78,9 @@
     <div class="col-sm-6">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">6. ER Diagram</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a target="blank" class="btn btn-secondary"
+                <h5 class="card-title">8. ER Diagram</h5>
+                <p class="card-text">A Database Diagram to show the Tables made in Backend and their Relationship</p>
+                <a target="blank" class="btn btn-warning"
                     href="https://drawsql.app/personal-116/diagrams/ratemymovie#">View ER Diagram</a>
             </div>
         </div>
