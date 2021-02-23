@@ -1,10 +1,12 @@
-# Rate My Movie API
+# Rate My Movie with REST API
 
-[ER Diagram](https://drawsql.app/personal-116/diagrams/ratemymovie#)
-
-* Inside
+* Inside this Project:
     * Django
-    * Django REST Framework
-    * Bootstrap
+    * [Django REST Framework](http://127.0.0.1:8000/api/movies)
     * Generic API Views
-    * Heroku
+    * Bootstrap
+    * PostgreSQL
+    * [Heroku Website]("#")
+    * [API.md](https://github.com/slk007/RateMyMovie/blob/master/API.md)
+    * [ER Diagram](https://drawsql.app/personal-116/diagrams/ratemymovie#)
+    * [Tests]("#")
