@@ -26,6 +26,15 @@ def get_average_rating():
         else:
             continue
 
+@login_required
+def movie_ratings(request):
+    if request.user.is_staff:
+        get_average_rating()
+        movies = Movie.objects.all().order_by('-average_rating')
+        return render(request, 'movie_ratings.html', {'movies': movies})
+    else:
+        return redirect('home')
+
 # Create your views here.
 def home(request):
     get_average_rating()
@@ -127,5 +136,3 @@ class RatingCreateAPIView(generics.CreateAPIView):
         else:
             # saving the rating given by current user
             serializer.save(given_by=self.request.user, for_movie=movie)
-
-

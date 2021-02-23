@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api.views import home, loginuser, signupuser, logoutuser, MovieListAPIView, MovieRetrieveUpdateDestroyAPIView, RatingCreateAPIView, RatingListAPIView
+from api.views import home, loginuser, signupuser, movie_ratings, logoutuser, MovieListAPIView, MovieRetrieveUpdateDestroyAPIView, RatingCreateAPIView, RatingListAPIView
 from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns = [
@@ -27,6 +27,7 @@ urlpatterns = [
     path("login/", loginuser, name="loginuser" ),
     path("signup/", signupuser, name="signupuser" ),
     path("logout/", logoutuser, name="logoutuser" ),
+    path("movie_ratings/", movie_ratings, name="movie_ratings" ),
 
     # api
     path("api/movies", MovieListAPIView.as_view(), name="movies"),

@@ -14,9 +14,26 @@
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Rate My Movie</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Rate My Movie</a>
 
         <ul class="navbar-nav mr-auto">
+            {% if user.is_authenticated and user.is_staff %}
+            <li class="nav-item">
+                <a>admin: @{{ request.user.username }}</a>
+            </li>
+            {% elif user.is_authenticated and not user.is_staff %}
+            <li class="nav-item">
+                <a>user: @{{ request.user.username }}</a>
+            </li>
+            {% endif %}
+        </ul>
+        <ul class="navbar-nav nav-right">
+            {% if user.is_authenticated and user.is_staff %}
+            <li class="nav-item">
+                <a class="btn btn-danger" href="{% url 'movie_ratings' %}">Notifications</a>
+            </li>
+            {% endif %}
+
             {% if user.is_authenticated %}
             <li class="nav-item">
                 <a class="btn btn-primary" href="{% url 'logoutuser' %}">Logout</a>
@@ -27,17 +44,6 @@
             </li>
             <li class="nav-item">
                 <a class="btn btn-primary" href="{% url 'signupuser' %}">SignUp</a>
-            </li>
-            {% endif %}
-        </ul>
-        <ul class="navbar-nav nav-right">
-            {% if user.is_authenticated and user.is_staff %}
-            <li class="nav-item">
-                <a>admin @{{ request.user.username }}</a>
-            </li>
-            {% elif user.is_authenticated and not user.is_staff %}
-            <li class="nav-item">
-                <a>user @{{ request.user.username }}</a>
             </li>
             {% endif %}
         </ul>

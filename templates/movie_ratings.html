@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Movie Title</th>
+            <th scope="col">Created By</th>
+            <th scope="col">Ratings</th>
+            <th scope="col">Average Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for movie in movies %}
+        <tr>
+            <th scope="row" class="text-primary">{{ movie.title }}</th>
+            <td>{{ movie.created_by }}</td>
+            <td>{{ movie.rating_set.count }}</td>
+            <td><strong class="text-success">{{ movie.average_rating }}</strong></td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td>No Movies Yet</td>
+            <td><a href="{% url 'movies' %}">Created New</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
