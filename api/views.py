@@ -94,6 +94,9 @@ class MovieListAPIView(generics.ListCreateAPIView):
     authentication_classes = [BasicAuthentication, TokenAuthentication]
     permission_classes = [IsAuthenticated]
 
+    def perform_create(self, serializer):
+        serializer.save(created_by=self.request.user, average_rating=0.0)
+
 
 class MovieRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
     """ Generic API view for Movies Detail, Update, Deletion """
@@ -132,7 +135,7 @@ class RatingCreateAPIView(generics.CreateAPIView):
             raise ValidationError("You can't rate the movie created by yourself ...... !!! ")
         elif self.get_queryset().exists():
             # current user has already rated the movie
-            raise ValidationError("You have already reviewed this Movie ...... !!!")
+            raise ValidationError("You have already rated this Movie ...... !!!")
         else:
             # saving the rating given by current user
             serializer.save(given_by=self.request.user, for_movie=movie)
