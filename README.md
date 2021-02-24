@@ -3,6 +3,7 @@
 * Inside this Project:
     * Django
     * [Django REST Framework](http://127.0.0.1:8000/api/movies)
+    * [API Endpoints](https://github.com/slk007/RateMyMovie/blob/master/API.md)
     * Generic API Views
     * Bootstrap
     * PostgreSQL
