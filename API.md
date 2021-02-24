@@ -45,7 +45,7 @@ http://127.0.0.1:8000/api/movies/<int:pk>/rate
 The request should have below fields:
 ```
 {
-    "rating": "<int>"
+    "rating": "<int><max=10, min=1>"
 }
 ```
 ---
