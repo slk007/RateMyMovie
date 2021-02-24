@@ -24,7 +24,8 @@ def get_average_rating():
             movie.average_rating = avg
             movie.save()
         else:
-            continue
+            movie.average_rating = 0.0
+            movie.save()
 
 @login_required
 def movie_ratings(request):

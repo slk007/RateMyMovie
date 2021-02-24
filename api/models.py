@@ -1,9 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.db.models import Avg
 
 # signals for automating token generation
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from rest_framework.authtoken.models import Token
 from django.conf import settings
@@ -34,3 +35,24 @@ class Rating(models.Model):
 def createAuthToken(sender, instance, created, **kwargs):
     if created:
         Token.objects.create(user=instance)
+
+
+def cal_average():
+    for movie in Movie.objects.all():
+        all_ratings = Rating.objects.filter(for_movie=movie)
+        if all_ratings:
+            avg = all_ratings.aggregate(Avg('rating'))['rating__avg']
+            movie.average_rating = avg
+            movie.save()
+        else:
+            movie.average_rating = 0.0
+            movie.save()
+
+
+@receiver(post_save, sender=Rating)
+def calculateAverageRating(sender, instance, **kwargs):
+    cal_average()
+
+@receiver(post_delete, sender=Rating)
+def calculateAverageRatingAfterDeletion(sender, instance, **kwargs):
+    cal_average()

@@ -11,3 +11,14 @@
     * [API.md](https://github.com/slk007/RateMyMovie/blob/master/API.md)
     * [ER Diagram](https://drawsql.app/personal-116/diagrams/ratemymovie#)
     * [Tests]("#")
+
+
+* Assumptions:
+    * User needs to login/signup from the home page of the website
+
+
+* API Endpoints:
+    * api/movies
+    * api/movies/<int:movie_id>
+    * api/movies/<int:movie_id>/ratings
+    * api/movies/<int:movie_id>/rate
