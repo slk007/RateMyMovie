@@ -1,1 +1,1 @@
-web: gunicorn RateMyMovie..wsgi --log-file -
+web: gunicorn RateMyMovie.wsgi --log-file -
