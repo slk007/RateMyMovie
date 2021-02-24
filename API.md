@@ -1,7 +1,7 @@
 # API Endpoints
 
 
-To Obtain Your Token(Method: POST):
+**To Obtain Your Token(Method: POST):**
 ```
 http://127.0.0.1:8000/get-token/
 ```
@@ -13,11 +13,11 @@ The request should have below fields:
 }
 ```
 ---
-List all Movies(Method: GET):  
+**List all Movies(Method: GET):** 
 ```
 http://127.0.0.1:8000/api/movies
 ```
-Create New Movie(Method: POST):
+**Create New Movie(Method: POST):**  
 The request should have below fields:
 ```
 {
@@ -28,17 +28,17 @@ The request should have below fields:
 }
 ```
 ---
-Get Movie with Movie id=pk (Method: GET):
+**Get Movie with Movie id=pk (Method: GET):**
 ```
 http://127.0.0.1:8000/api/movies/<int:pk>
 ```
 ---
-Get all the Ratings for Movie with id=pk(Method: GET):
+**Get all the Ratings for Movie with id=pk(Method: GET):**
 ```
 http://127.0.0.1:8000/api/movies/<int:pk>/ratings
 ```
 ---
-Rate a Movie with Movie id=pk (Method: POST):
+**Rate a Movie with Movie id=pk (Method: POST):**
 ```
 http://127.0.0.1:8000/api/movies/<int:pk>/rate
 ```
