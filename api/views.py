@@ -38,7 +38,6 @@ def movie_ratings(request):
 
 # Create your views here.
 def home(request):
-    get_average_rating()
     return render(request, 'home.html')
 
 def loginuser(request):
